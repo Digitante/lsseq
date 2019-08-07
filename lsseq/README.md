@@ -1,4 +1,4 @@
-### lsseq
+# lsseq
 
 A simple filter utility for viewing long listings of text that have
 either repeating lines or sequential lines. Usage is similar to "uniq",
@@ -7,7 +7,8 @@ of incrementing or decrementing numbered lines.
 
 In order to be regarded as a run, lines must contain a single block of
 decimal numerals (with or without zero-padding), which increase by one
-step on each line.
+step on each line. It does not matter if there are additional number blocks
+that don't change, and the changing number can appear anywhere in the line.
 
 Although there is nothing about the program that requires it to be used
 on file listings, it was created to quickly asses PNG or EXR streams
@@ -45,3 +46,9 @@ The output will look like this:
 
 For very long runs, this will be MUCH more compact and readable.
 
+# TODO
+
+Would like to add option parsing and some options for ignoring parts of
+the input lines. This would be handy for use with "ls -l" for example,
+to ignore the changing filesize and data numbers, which would currently
+foul the run-detection.
